@@ -1,8 +1,6 @@
 import re
 from .base import BaseParser, Finding
 
-# Contoh baris output nuclei:
-# [CVE-2021-12345] [http] [critical] http://target.com/path
 NUCLEI_LINE = re.compile(
     r"^\[([^\]]+)\]\s*\[([^\]]+)\]\s*\[([^\]]+)\]\s*(\S+)"
 )

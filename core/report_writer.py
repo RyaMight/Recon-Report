@@ -2,16 +2,12 @@ from datetime import datetime
 
 
 class ReportWriter:
-    """
-    Menulis temuan ke file markdown secara real-time.
-    Aman dibuka bersamaan dengan `tail -f` atau live markdown preview
-    sementara tool masih berjalan.
-    """
+
 
     def __init__(self, session):
         self.session = session
         self.path = session.report_path
-        self._seen = set()  # dedup sederhana: (tool, title, evidence)
+        self._seen = set()  
 
     def log_command(self, command):
         cmd_str = " ".join(command)

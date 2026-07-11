@@ -6,12 +6,7 @@ import sys
 
 
 def run_and_capture(command, tool_parser, report_writer):
-    """
-    Menjalankan `command` sebagai subprocess lewat pseudo-terminal sehingga:
-      - output normal tool (warna, progress bar) tetap tampil apa adanya
-      - tiap baris juga di-stream ke `tool_parser` untuk ekstraksi finding
-      - finding yang cocok langsung ditulis live ke report via `report_writer`
-    """
+
     master_fd, slave_fd = pty.openpty()
 
     proc = subprocess.Popen(

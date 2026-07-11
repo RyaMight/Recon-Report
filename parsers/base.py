@@ -5,7 +5,7 @@ from typing import Optional
 @dataclass
 class Finding:
     tool: str
-    severity: str      # info | low | medium | high | critical
+    severity: str      
     title: str
     evidence: str = ""
 
